@@ -1,0 +1,6 @@
+.env
+*.pem
+.terraform/
+*.wld
+*.wld.bak
+*.wld.bak2
