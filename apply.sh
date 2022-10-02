@@ -6,4 +6,4 @@
 # verify identity
 aws sts get-caller-identity
 
-terraform apply
+terraform -chdir=terraform apply
