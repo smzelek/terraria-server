@@ -1,2 +1,2 @@
-# At minute 0 past hour 11 and 23. https://crontab.guru/#0_11,23_*_*_*
-0 5,17 * * * ~/backup.sh >> ~/server.log 2>&1
+# At minute 0 past every hour.
+0 * * * * ~/backup.sh >> ~/server.log 2>&1
