@@ -1,11 +1,10 @@
 #!/bin/bash
 
 sudo apt update && sudo apt install -y wget tmux unzip moreutils
-wget https://terraria.org/api/download/pc-dedicated-server/terraria-server-1442.zip
-unzip terraria-server-1442.zip
-chmod +x 1442/Linux/TerrariaServer.bin.x86_64
+wget https://github.com/tModLoader/tModLoader/releases/download/v2022.09.47.4/tModLoader.zip
+unzip tModLoader.zip -d tmodserver
+chmod +x tmodserver/start-tModLoaderServer.sh
 
-touch ~/server.log
 crontab backupcron
 crontab -l
 

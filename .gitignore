@@ -4,4 +4,7 @@
 *.wld
 *.wld.bak
 *.wld.bak2
-serverconfig.txt
+*.tmod
+*.twld
+*.twld.bak
+data/serverconfig.txt

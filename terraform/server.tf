@@ -9,18 +9,3 @@ resource "aws_instance" "terraria_server" {
   ]
   monitoring = true
 }
-
-resource "null_resource" "test" {
-  provisioner "file" {
-    source      = "./data/"
-    destination = "."
-  }
-
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    host        = aws_eip.terraria_server_ip.public_ip
-    timeout     = "20s"
-    private_key = file("./${var.server_key_pair_name}.pem")
-  }
-}

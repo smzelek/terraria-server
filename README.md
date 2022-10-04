@@ -1,4 +1,4 @@
-# Steve's Terraria Server :)
+# Steve's Terraria tMod Server :)
 
 TODO:
 * enable hibernation during off hours to save $$$
