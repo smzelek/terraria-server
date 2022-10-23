@@ -4,11 +4,11 @@ locals {
 }
 
 variable "trusted_ssh" {
-    description = "CIDR Blocks allowed to SSH into the server."
-    type = list(string)
+  description = "CIDR Blocks allowed to SSH into the server."
+  type        = list(string)
 }
 
 variable "server_key_pair_name" {
-    description = "Key pair for SSHing into the server."
-    type = string
+  description = "Key pair for SSHing into the server."
+  type        = string
 }

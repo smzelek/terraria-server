@@ -18,6 +18,6 @@ echo "Done clearing noisy tmod log." | ts
 
 echo "Clearing noisy journal log." | ts
 du -hcs /var/log/journal/ | ts
-journalctl --vacuum-size=50M | ts
+sudo journalctl --vacuum-size=50M | ts
 du -hcs /var/log/journal/ | ts
 echo "Done clearing noisy journal log." | ts
