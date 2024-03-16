@@ -1,10 +1,5 @@
 # Steve's Terraria tMod Server :)
 
-TODO:
-* enable hibernation during off hours to save $$$
-* look into running TModLoader in Linux
-* add alarms that email me if server goes offline or CPU/Mem/Storage use is too high
-
 ## Setup
 1. Download access PEMs from Google Drive and chmod to 400
 2. Make sure personal profile is setup via AWS cli
