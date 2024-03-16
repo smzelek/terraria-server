@@ -8,3 +8,4 @@
 *.twld
 *.twld.bak
 data/serverconfig.txt
+enabled.json
