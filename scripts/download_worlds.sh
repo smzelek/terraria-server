@@ -5,4 +5,5 @@ cd ${SCRIPT_DIR}/..
 . .env
 
 # download worlds from Worlds/ folder used by server to .
-scp -i "${TF_VAR_server_key_pair_name}.pem" ubuntu@${SERVER_IP}:~/.local/share/Terraria/tModLoader/Worlds/* .
+scp -i "${TF_VAR_server_key_pair_name}.pem" ubuntu@${SERVER_IP}:~/.local/share/Terraria/tModLoader/Worlds/${WORLD}.twld .
+scp -i "${TF_VAR_server_key_pair_name}.pem" ubuntu@${SERVER_IP}:~/.local/share/Terraria/tModLoader/Worlds/${WORLD}.wld .

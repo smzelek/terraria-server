@@ -7,5 +7,5 @@
 *.tmod
 *.twld
 *.twld.bak
-data/serverconfig.txt
+serverconfig.txt
 enabled.json

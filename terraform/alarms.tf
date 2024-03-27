@@ -15,14 +15,38 @@ resource "aws_cloudwatch_metric_alarm" "terraria-server-down" {
 
 resource "aws_cloudwatch_metric_alarm" "terraria-server-disk" {
   alarm_name                = "terraria-server-disk"
-  namespace                 = "Terraria"
-  metric_name               = "DiskUsage"
+  namespace                 = "CWAgent"
+  metric_name               = "disk_used_percent"
+  dimensions = {
+    path = "/",
+    Resource = "terraria-server",
+    fstype = "ext4"
+  }
+  statistic                 = "Maximum"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
+  threshold                 = "75"
+  evaluation_periods        = "1"
+  period                    = "300"
+  alarm_description         = "This alarm is triggered if the cw-agent running on the server EC2 instance reports high resource usage."
+  alarm_actions             = [aws_sns_topic.email_server_admin.arn]
+  ok_actions                = []
+  insufficient_data_actions = []
+}
+
+resource "aws_cloudwatch_metric_alarm" "terraria-server-memory" {
+  alarm_name                = "terraria-server-memory"
+  namespace                 = "CWAgent"
+  metric_name               = "mem_used_percent"
+  dimensions = {
+    Resource = "terraria-server"
+  }
+
   statistic                 = "Maximum"
   comparison_operator       = "GreaterThanOrEqualToThreshold"
   threshold                 = "90"
   evaluation_periods        = "1"
   period                    = "300"
-  alarm_description         = "This alarm is triggered by the metric Terraria/DiskUsage published via cronjob on the Terraria Server EC2 instance if disk space is low."
+  alarm_description         = "This alarm is triggered if the cw-agent running on the server EC2 instance reports high resource usage."
   alarm_actions             = [aws_sns_topic.email_server_admin.arn]
   ok_actions                = []
   insufficient_data_actions = []

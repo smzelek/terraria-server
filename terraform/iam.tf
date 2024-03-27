@@ -53,3 +53,7 @@ resource "aws_iam_role_policy" "terraria_server_policy" {
   })
 }
 
+resource "aws_iam_role_policy_attachment" "CloudWatchAgentServerRole" {
+  role       = aws_iam_role.terraria_server_role.id
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+}

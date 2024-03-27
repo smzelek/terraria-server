@@ -19,11 +19,11 @@
     * Level+
     * Bags
 5. Create a world locally
-6. Create a `.env` file from `example.env`, fill in all vars except SERVER_IP
+6. Create a `.env` file from `example.env`, fill in Create Server Vars
 7. Run `./scripts/create_server.sh`
-8. Fill in SERVER_IP in `.env`
-9. Copy mods into `mods/` folder and same for `worlds/`
-10. Run `./scripts/upload_data.sh`
+8. Copy mods into `mods/` folder and same for `worlds/`
+9. Fill in Upload Data Vars in `.env`
+10. Run `./scripts/upload_data.sh all`
 11. Run `./scripts/ssh.sh`
     *  Run `1_setup.sh`
     *  Run `2_install.sh`
