@@ -4,8 +4,8 @@ sudo apt update && sudo apt install -y wget tmux unzip moreutils awscli
 wget https://amazoncloudwatch-agent.s3.amazonaws.com/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 
-chmod +x alarms.sh
-chmod +x cleanup.sh
+chmod +x alarm.sh
+# chmod +x cleanup.sh
 
 crontab cronjobs
 crontab -l
