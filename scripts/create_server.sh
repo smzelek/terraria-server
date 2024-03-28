@@ -12,6 +12,3 @@ sed -i "s/SERVER_IP=.*/SERVER_IP=${_SERVER_IP}/g" .env
 
 ssh -i "${TF_VAR_server_key_pair_name}.pem" ubuntu@${_SERVER_IP} 'mkdir -p /home/ubuntu/.local/share/Terraria/tModLoader/Mods/'
 ssh -i "${TF_VAR_server_key_pair_name}.pem" ubuntu@${_SERVER_IP} 'mkdir -p /home/ubuntu/.local/share/Terraria/tModLoader/Worlds/'
-
-
-bash ./scripts/upload_data.sh scripts

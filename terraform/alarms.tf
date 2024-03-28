@@ -1,16 +1,16 @@
-resource "aws_cloudwatch_metric_alarm" "terraria-server-down" {
-  alarm_name                = "terraria-server-down"
+resource "aws_cloudwatch_metric_alarm" "terraria-server-uptime" {
+  alarm_name                = "terraria-server-uptime"
   namespace                 = "Terraria"
-  metric_name               = "ServerDown"
-  statistic                 = "Maximum"
-  comparison_operator       = "GreaterThanOrEqualToThreshold"
-  threshold                 = "1"
+  metric_name               = "terraria-server-uptime"
+  statistic                 = "Minimum"
+  comparison_operator       = "LessThanOrEqualToThreshold"
+  threshold                 = "0"
   evaluation_periods        = "1"
   period                    = "300"
-  alarm_description         = "This alarm is triggered by the metric Terraria/ServerDown published via cronjob on the Terraria Server EC2 instance if the server is not running."
+  alarm_description         = "This alarm is triggered by the metric Terraria/terraria-server-uptime published via cronjob on the Terraria Server EC2 instance."
   alarm_actions             = [aws_sns_topic.email_server_admin.arn]
   ok_actions                = []
-  insufficient_data_actions = []
+  insufficient_data_actions = [aws_sns_topic.email_server_admin.arn]
 }
 
 resource "aws_cloudwatch_metric_alarm" "terraria-server-disk" {
